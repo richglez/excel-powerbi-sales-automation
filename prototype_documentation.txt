@@ -1,0 +1,4 @@
+1. generador de ventas código generador automático de datos de prueba. Lo que hace es "inventar" 200 filas de ventas aleatorias y escribirlas en tu hoja de Excel de un tirón.
+
+2. Exportar a CSV (clave para backend)
+
