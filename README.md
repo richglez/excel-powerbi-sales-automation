@@ -1,4 +1,4 @@
-# excel-powerbi-sales-automation
+# Excel PowerBI Sales Automation
 Full-stack + Data -> Automated sales analysis system that integrates Excel (VBA), a Python backend with Django, and Power BI for visualization.
 
 ## Objective
