@@ -121,11 +121,11 @@ python manage.py runserver
 
 
 ## Documentation
-[PRD](docs/planning/PRD.md) - Product Requirements Document
-[Roadmap](docs/planning/roadmap.md) - Schema de base de datos
-[Architecture](docs/architecture/architecture.md) - Architecura
-[Models](docs/architecture/scheme.md) - Diagrams
-[API](docs/api/docs_APIRoutes.txt) - API Routes
+* [PRD](docs/planning/PRD.md) - Product Requirements Document
+* [Roadmap](docs/planning/roadmap.md) - Schema de base de datos
+* [Architecture](docs/architecture/architecture.md) - Architecura
+* [Models](docs/architecture/scheme.md) - Diagrams
+* [API](docs/api/docs_APIRoutes.txt) - API Routes
 
 ## Licence
 MIT
