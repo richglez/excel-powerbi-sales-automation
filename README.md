@@ -6,10 +6,6 @@ This project is an end-to-end sales analytics system that integrates Excel (VBA)
 
 It simulates a real-world business workflow where sales data is generated, processed, stored, and visualized through a modern analytics dashboard.
 
----
-
-## Objective
-
 To design and implement a full data pipeline that automates sales data generation, processing, and visualization.
 
 ---
@@ -20,6 +16,7 @@ To design and implement a full data pipeline that automates sales data generatio
 * **Python:** Data processing and backend logic
 * **Django (Django REST Framework):** API and backend services
 * **Power BI:** Data visualization and dashboarding
+
 
 ---
 
@@ -54,22 +51,18 @@ Power BI Dashboard
 
 ```
 excel-powerbi-sales-automation/
-│
-├── excel/
-│   └── sales_data.xlsm
-│
 ├── backend/
-│   └── django_project/
-│
-├── powerbi/
-│   └── dashboard.pbix
-│
 ├── data/
 │   └── sales_data.csv
-│
+├── excel/
+│   └── sales_data.xlsm
 ├── images/
 │   └── dashboard.png
-│
+├── powerbi/
+│   └── dashboard.pbix
+├── sales/
+│   └── migrations
+├── venv/
 └── README.md
 ```
 
