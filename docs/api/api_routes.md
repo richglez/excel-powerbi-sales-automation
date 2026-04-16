@@ -1,4 +1,4 @@
-# API Endpoints
+# API Routes Endpoints
 
 -------------------------------------------
 POST http://127.0.0.1:8000/api/sales/upload/ -> Subir CSV

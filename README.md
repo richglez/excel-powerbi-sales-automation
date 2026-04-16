@@ -72,6 +72,32 @@ excel-powerbi-sales-automation/
 
 ---
 
+
+# API Routes Endpoints
+| **Method**  | **Layer**         |
+| --------------- | ----------------- |
+| Excel VBA       | Data Generation   |
+| Python / Django | Backend           |
+| Pandas          | Data Processing   |
+| Power BI        | Visualization     |
+| REST            | API Communication |
+
+-------------------------------------------
+POST http://127.0.0.1:8000/api/sales/upload/ -> Subir CSV
+Body → form-data:
+
+key: file
+value: (tu sales_data.csv)
+
+-------------------------------------------
+
+GET http://127.0.0.1:8000/api/sales/summary/ -> Summary o ver resumen
+
+-------------------------------------------
+
+
+
+
 ## Workflow
 
 1. Excel generates synthetic sales data using VBA

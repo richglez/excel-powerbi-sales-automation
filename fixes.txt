@@ -1,0 +1,24 @@
+El SendCSVToAPI en VBA tiene un bug silencioso
+El body del multipart está concatenando bytes con string de forma incorrecta — en archivos grandes o con caracteres especiales va a fallar. Por ahora funciona con CSVs simples pero es frágil.
+
+Paso 1 — Hoy: Corregir los issues de arriba (30 min)
+Paso 2 — Backend: Agregar endpoints para Power BI:
+
+/api/sales/by-category/
+/api/sales/by-date/
+/api/sales/kpis/ → total revenue, avg ticket, top product
+
+Paso 3 — Power BI: Conectar via Web connector a tus endpoints GET. Power BI Desktop → Obtener datos → Web → http://127.0.0.1:8000/api/sales/summary/
+Paso 4 — Dashboard: Construir en Power BI con estas visualizaciones:
+
+Tarjetas KPI (Revenue total, Qty vendida, Ticket promedio)
+Gráfico de barras: Top productos por revenue
+Gráfico de líneas: Ventas por fecha
+Donut: Distribución por categoría
+
+Paso 5 — Opcional pero profesional: Agregar un parámetro de fecha en los endpoints para filtrado dinámico desde Power BI via query params (?date_from=&date_to=).
+
+
+
+Resumen de endpoints
+EndpointUso en Power BIPOST /upload/Excel VBA → sube el CSVGET /kpis/Tarjetas: Revenue total, Ticket promedio, Top productoGET /summary/Tabla: Revenue + Qty por productoGET /by-category/Donut chart: distribución por categoríaGET /by-date/Line chart: tendencia diariaGET /by-month/Bar chart: tendencia mensualGET /top-products/?limit=5Horizontal bars: Top 5 productosGET /raw/Tabla de detalle completo
