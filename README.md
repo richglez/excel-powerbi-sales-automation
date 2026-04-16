@@ -2,67 +2,71 @@
 
 ## Overview
 
-This project is an end-to-end sales analytics system that integrates Excel (VBA), a Python backend built with Django, and Power BI for data visualization.
+**Excel Power BI Sales Automation** is an end-to-end data pipeline that simulates a real-world sales analytics workflow.
 
-It simulates a real-world business workflow where sales data is generated, processed, stored, and visualized through a modern analytics dashboard.
+The system integrates **Excel (VBA)** for data generation, a **Django-based backend** for ingestion and processing, and **Power BI** for visualization. It demonstrates how raw transactional data can be transformed into actionable business insights through a modern analytics stack.
 
-To design and implement a full data pipeline that automates sales data generation, processing, and visualization.
+This project is designed to showcase **full-stack development, data engineering, and business intelligence capabilities.**
 
 ---
 
 ## Tech Stack
 
-* **Excel (VBA):** Data generation and automation
-* **Python:** Data processing and backend logic
-* **Django (Django REST Framework):** API and backend services
-* **Power BI:** Data visualization and dashboarding
+| **Technology**  | **Layer**          |
+| --------------- | ------------------ |
+| Excel VBA       | Data Generation    |
+| Python / Django | Backend            |
+| Pandas          | Data Processing    |
+| Power BI        | Visualization      |
+| REST            | API Communication  |
+
 
 
 ---
 
-## Key Features
+## Features
 
-* Automated sales data generation using Excel macros
-* Data export to CSV format
-* Backend ingestion and processing of sales data
-* REST API for data access
+### Data Generation
+* Automated synthetic sales data generation (200+ records per run)
+* Configurable randomness (products, categories, dates, revenue)
+
+### Data Ingestion
+* CSV-based ingestion pipeline
+* Planned: Direct Excel → API integration via HTTP (VBA POST requests)
+
+### Backend Processing
+* Data cleaning and normalization using Pandas
+* Aggregation logic for KPIs and analytics
+* Scalable service layer using Django architecture
+
+### API Layer
+* RESTful endpoints for:
+  * Data ingestion
+  * Aggregated sales metrics
+  * Filtering (date, product, category)
+* Designed for BI tool consumption
+
+### Data Visualization
 * Interactive dashboards in Power BI
-* Data cleaning and transformation
-* KPI tracking (revenue, trends, top products)
-* Simulation of a real business intelligence workflow
+* KPI tracking:
+  * Revenue trends
+  * Top-performing products
+  * Sales distribution
 
 ---
 
-## Data Pipeline
-
-```
-Excel (VBA)
-   ↓
-CSV Export
-   ↓
-Django Backend (API + Processing)
-   ↓
-Power BI Dashboard
-```
-
----
 
 ## Project Structure
 
 ```
 excel-powerbi-sales-automation/
-├── backend/
-├── data/
-│   └── sales_data.csv
-├── excel/
-│   └── sales_data.xlsm
-├── images/
-│   └── dashboard.png
-├── powerbi/
-│   └── dashboard.pbix
-├── sales/
-│   └── migrations
-├── venv/
+├── backend/              # Django project
+├── sales/                # Core app (models, views, logic)
+├── excel/                # VBA-enabled Excel file
+├── data/                 # Generated CSV files
+├── powerbi/              # Power BI dashboard (.pbix)
+├── images/               # Dashboard previews
+├── venv/                 # Virtual environment
 └── README.md
 ```
 
@@ -70,30 +74,16 @@ excel-powerbi-sales-automation/
 
 ## Workflow
 
-1. Excel generates synthetic sales data using VBA macros
-2. Data is exported to CSV
-3. The backend ingests and stores the data
-4. API endpoints expose processed data
-5. Power BI consumes the data and renders dashboards
+1. Excel generates synthetic sales data using VBA
+2. Data is exported to CSV or sent via HTTP request
+3. Django backend ingests and processes the data
+4. Aggregations and KPIs are calculated
+5. Power BI consumes the processed data
+6. Dashboards visualize business insights
 
 ---
 
-## API Capabilities (Planned / Implemented)
 
-* Upload CSV data
-* Retrieve aggregated sales data
-* Filter by product, category, or date
-* KPI calculations
-
----
-
-## Future Improvements
-
-* Automate Excel-to-backend integration via HTTP requests
-* Containerize backend using Docker
-* Deploy backend to cloud platforms (e.g., Render or Railway)
-* Connect Power BI directly to the API instead of static files
-* Add authentication and user roles
 
 ---
 
@@ -106,6 +96,36 @@ excel-powerbi-sales-automation/
 
 ---
 
-## Notes
 
-This project is designed as a portfolio piece to demonstrate full-stack development combined with data engineering and analytics capabilities.
+## Installation
+```bash
+# Create virtual environment
+python -m venv venv
+venv\Scripts\activate  # Windows
+
+# Install dependencies
+pip install django djangorestframework pandas
+
+# Setup project
+django-admin startproject backend
+cd backend
+python manage.py startapp sales
+
+# Run migrations
+python manage.py makemigrations
+python manage.py migrate
+
+# Start server
+python manage.py runserver
+```
+
+
+## Documentation
+[PRD](docs/planning/PRD.md) - Product Requirements Document
+[Roadmap](docs/planning/roadmap.md) - Schema de base de datos
+[Architecture](docs/architecture/architecture.md) - Architecura
+[Models](docs/architecture/scheme.md) - Diagrams
+[API](docs/api/docs_APIRoutes.txt) - API Routes
+
+## Licence
+MIT
