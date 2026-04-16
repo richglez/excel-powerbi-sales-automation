@@ -74,26 +74,18 @@ excel-powerbi-sales-automation/
 
 
 # API Routes Endpoints
-| **Method**  | **Layer**         |
-| --------------- | ----------------- |
-| Excel VBA       | Data Generation   |
-| Python / Django | Backend           |
-| Pandas          | Data Processing   |
-| Power BI        | Visualization     |
-| REST            | API Communication |
 
--------------------------------------------
-POST http://127.0.0.1:8000/api/sales/upload/ -> Subir CSV
-Body → form-data:
+| **Endpoint**                  | **Uso en Power BI**                                    |
+| ----------------------------- | ------------------------------------------------------ |
+| POST /upload/                 | Excel VBA → sube el CSV                                |
+| GET /kpis/                    | Tarjetas: Revenue total, Ticket promedio, Top producto |
+| GET /summary/                 | Tabla: Revenue + Qty por producto                      |
+| GET /by-category/             | Donut chart: distribución por categoría                |
+| GET /by-date/                 | Line chart: tendencia diaria                           |
+| GET /by-month/                | Bar chart: tendencia mensual                           |
+| GET /top-products/?limit=5    | Horizontal bars: Top 5 productos                       |
+| GET /raw/                     | Tabla de detalle completo                              |
 
-key: file
-value: (tu sales_data.csv)
-
--------------------------------------------
-
-GET http://127.0.0.1:8000/api/sales/summary/ -> Summary o ver resumen
-
--------------------------------------------
 
 
 
